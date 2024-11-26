@@ -35,7 +35,7 @@ const SeedsBlogPage = () => {
 
   return (
     <div className="seeds-blog-page">
-      <h1>Seeds Blog</h1>
+      <h1 className="SeedsHeading">Seeds Blog</h1>
       <div className="seeds-blog-posts">
         {blogPosts.map((post) => (
           <div key={post.id} className="seeds-blog-post">

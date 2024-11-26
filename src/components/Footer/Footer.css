@@ -1,8 +1,32 @@
+/* Ensure the body and html elements take up at least 100% of the viewport height */
+html,
+body {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-content {
+  flex: 1; /* This ensures the main content takes up the remaining space between the header and footer */
+}
+
+/* Footer styles */
 .footer {
-  background-color: #333;
+  background-color: #053518;
   color: white;
   padding: 20px 0;
   text-align: center;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}
+
+h3 {
+  color: rgb(187, 111, 3);
+  font-weight: bold;
+  text-decoration: underline;
+  font-size: 18px;
 }
 
 .footer-links {
@@ -69,5 +93,12 @@
 
   .footer-section {
     margin: 10px 0;
+  }
+
+  h3 {
+    color: rgb(187, 111, 3);
+    font-weight: bold;
+    text-decoration: underline;
+    font-size: 15px;
   }
 }

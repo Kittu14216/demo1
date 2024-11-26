@@ -1,7 +1,7 @@
 import React from "react";
 import { useParams, Link } from "react-router-dom";
 import { food_list } from "../../assets/assets"; // Adjust the import path as necessary
-import "./CategoryItems.css"; // Ensure you have appropriate styles
+import "./CategoryItems.css";
 
 const CategoryPage = () => {
   const { category } = useParams();
@@ -11,7 +11,7 @@ const CategoryPage = () => {
 
   return (
     <div className="category-page">
-      <h2>{category}</h2>
+      <h2 className="CategoryHeading">{category}</h2>
       <div className="food-items">
         {items.map((food) => (
           <Link to={`/item/${food._id}`} key={food._id} className="food-item">

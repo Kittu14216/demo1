@@ -4,7 +4,7 @@
   align-items: center;
   justify-content: space-between;
   padding: 10px 20px;
-  background-color: #151315;
+  background-color: #053518;
   color: white;
 }
 
@@ -46,7 +46,7 @@
 }
 
 .active {
-  background-color: #f0880a;
+  background-color: #cf2308;
   border-radius: 5px;
 }
 

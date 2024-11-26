@@ -1,96 +1,91 @@
 import React, { useState } from "react";
-import {
-  FaGooglePlusG,
-  FaFacebookF,
-  FaGithub,
-  FaLinkedinIn,
-} from "react-icons/fa";
+// import Logo from "../../assets/logo.png";
+import GoogleSvg from "../../assets/icons8-google.svg";
+import { FaEye, FaEyeSlash } from "react-icons/fa6";
 import styles from "./Login.module.css";
 
 const AuthPage = () => {
-  const [isActive, setIsActive] = useState(false);
-
-  const handleToggle = () => {
-    setIsActive(!isActive);
-  };
+  const [isSignUp, setIsSignUp] = useState(false);
+  const [showPassword, setShowPassword] = useState(false);
+  const [showConfirmPassword, setShowConfirmPassword] = useState(false);
 
   return (
-    <div
-      className={`${styles.authContainer} ${isActive ? styles.activ : ""}`}
-      id="container"
-    >
-      <div className={`${styles.authFormContainer} ${styles.authSignUp}`}>
-        <form>
-          <h1>Create Account</h1>
-          <div className={styles.authSocialIcons}>
-            <a href="#" className={styles.icon}>
-              <FaGooglePlusG />
-            </a>
-            <a href="#" className={styles.icon}>
-              <FaFacebookF />
-            </a>
-            <a href="#" className={styles.icon}>
-              <FaGithub />
-            </a>
-            <a href="#" className={styles.icon}>
-              <FaLinkedinIn />
-            </a>
-          </div>
-          <span>or use your email for registration</span>
-          <input type="text" placeholder="Name" />
-          <input type="email" placeholder="Email" />
-          <input type="password" placeholder="Password" />
-          <button>Sign Up</button>
-        </form>
-      </div>
-      <div className={`${styles.authFormContainer} ${styles.authSignIn}`}>
-        <form>
-          <h1>Sign In</h1>
-          <div className={styles.authSocialIcons}>
-            <a href="#" className={styles.icon}>
-              <FaGooglePlusG />
-            </a>
-            <a href="#" className={styles.icon}>
-              <FaFacebookF />
-            </a>
-            <a href="#" className={styles.icon}>
-              <FaGithub />
-            </a>
-            <a href="#" className={styles.icon}>
-              <FaLinkedinIn />
-            </a>
-          </div>
-          <span>or use your email for sign in</span>
-          <input type="email" placeholder="Email" />
-          <input type="password" placeholder="Password" />
-          <a href="#">Forgot Your Password?</a>
-          <button>Sign In</button>
-        </form>
-      </div>
-      <div className={styles.authToggleContainer}>
-        <div className={styles.authToggle}>
-          <div className={`${styles.authTogglePanel} ${styles.authToggleLeft}`}>
-            <h1>Welcome Back!</h1>
-            <p>Enter your personal details to use all of site features</p>
-            <button className={styles.hidden} id="login" onClick={handleToggle}>
-              Sign In
-            </button>
-          </div>
-          <div
-            className={`${styles.authTogglePanel} ${styles.authToggleRight}`}
-          >
-            <h1>Hello, Customer!</h1>
+    <div className={styles.loginMain}>
+      <div className={styles.loginRight}>
+        <div className={styles.loginRightContainer}>
+          {/* <div className={styles.loginLogo}>
+            <img src={Logo} alt="Logo" />
+          </div> */}
+          <div className={styles.loginCenter}>
+            <h2>{isSignUp ? "Create an Account" : "Welcome back!"}</h2>
             <p>
-              Register with your personal details to use all of site features
+              {isSignUp
+                ? "Sign up with your details"
+                : "Please enter your details"}
             </p>
-            <button
-              className={styles.hidden}
-              id="register"
-              onClick={handleToggle}
-            >
-              Sign Up
-            </button>
+            <form>
+              <input type="email" placeholder="Email" />
+              <div className={styles.passInputDiv}>
+                <input
+                  type={showPassword ? "text" : "password"}
+                  placeholder="Password"
+                />
+                {showPassword ? (
+                  <FaEyeSlash onClick={() => setShowPassword(!showPassword)} />
+                ) : (
+                  <FaEye onClick={() => setShowPassword(!showPassword)} />
+                )}
+              </div>
+              {isSignUp && (
+                <div className={styles.passInputDiv}>
+                  <input
+                    type={showConfirmPassword ? "text" : "password"}
+                    placeholder="Confirm Password"
+                  />
+                  {showConfirmPassword ? (
+                    <FaEyeSlash
+                      onClick={() =>
+                        setShowConfirmPassword(!showConfirmPassword)
+                      }
+                    />
+                  ) : (
+                    <FaEye
+                      onClick={() =>
+                        setShowConfirmPassword(!showConfirmPassword)
+                      }
+                    />
+                  )}
+                </div>
+              )}
+              <div className={styles.loginCenterOptions}>
+                <div className={styles.rememberDiv}>
+                  <input type="checkbox" id="remember-checkbox" />
+                  <label htmlFor="remember-checkbox">
+                    {isSignUp ? "Sign up with Phone" : "Remember for 30 days"}
+                  </label>
+                </div>
+                {!isSignUp && (
+                  <a href="#" className={styles.forgotPassLink}>
+                    Forgot password?
+                  </a>
+                )}
+              </div>
+              <div className={styles.loginCenterButtons}>
+                <button type="button">{isSignUp ? "Sign Up" : "Log In"}</button>
+                <button type="button">
+                  <img src={GoogleSvg} alt="Google Icon" />
+                  {isSignUp ? "Sign Up with Google" : "Log In with Google"}
+                </button>
+              </div>
+            </form>
           </div>
+
+          <p className={styles.loginBottomP}>
+            {isSignUp ? "Already have an account?" : "Don't have an account?"}
+            <a href="#" onClick={() => setIsSignUp(!isSignUp)}>
+              {isSignUp ? " Log In" : " Sign Up"}
+            </a>
+          </p>
         </div>
       </div>
     </div>

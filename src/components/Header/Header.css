@@ -1,0 +1,112 @@
+.header {
+  position: relative; /* Added to ensure .header-content stays within the .header */
+  background: url("/public/header_img.png") no-repeat;
+  width: 100%;
+  height: 75vh; /* vh is relative to the viewport height */
+  background-size: cover; /* Ensures the image covers the area */
+  background-position: center; /* Centers the image */
+  background-repeat: no-repeat; /* Prevents the image from repeating */
+  margin: 10px auto; /* Centers the element horizontally */
+  border-radius: 10px;
+}
+
+.header-content {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  padding: 20px;
+  border-radius: 10px;
+  align-items: start;
+  gap: 1.5vw;
+  max-width: 50%;
+  background-color: rgba(0, 0, 0, 0.735);
+  bottom: 20%;
+  left: 10%;
+  animation: fadeIn 4s;
+}
+
+.header-content h2 {
+  font-weight: bold;
+  color: rgb(218, 13, 13);
+  font-size: max(2rem);
+}
+
+.header-content p {
+  font-size: 1rem;
+  color: rgb(198, 194, 194);
+  font-weight: bold;
+}
+
+.header-content button {
+  border: none;
+  color: rgb(5, 4, 4);
+  font-size: 1rem;
+  font-weight: bold;
+  padding: 8px 15px;
+  background: white;
+  border-radius: 50px;
+}
+.header-content button:hover {
+  background-color: rgb(255, 94, 0);
+  cursor: pointer;
+  color: white;
+}
+
+/* Media Queries */
+
+/* Laptops and Desktops */
+@media (max-width: 1200px) {
+  .header-content {
+    max-width: 60%;
+  }
+  .header-content h2 {
+    font-size: 3rem;
+  }
+  .header-content p {
+    font-size: 0.9rem;
+  }
+}
+
+/* Tablets */
+@media (max-width: 768px) {
+  .header {
+    height: 60vh;
+  }
+  .header-content {
+    max-width: 70%;
+    bottom: 25%;
+    left: 8%;
+  }
+  .header-content h2 {
+    font-size: 2.5rem;
+  }
+  .header-content p {
+    font-size: 0.8rem;
+  }
+  .header-content button {
+    font-size: 0.9rem;
+  }
+}
+
+/* Mobile Phones */
+@media (max-width: 480px) {
+  .header {
+    height: 50vh;
+    border-radius: 0; /* Remove border radius on smaller screens */
+  }
+  .header-content {
+    max-width: 90%;
+    bottom: 15%;
+    left: 5%;
+  }
+  .header-content h2 {
+    font-size: 2rem;
+  }
+  .header-content p {
+    font-size: 0.7rem;
+  }
+  .header-content button {
+    font-size: 0.8rem;
+    padding: 6px 12px;
+  }
+}

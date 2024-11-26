@@ -6,6 +6,9 @@ import Layout from "./Layout";
 import FoodList from "./components/Items/Items";
 import CategoryPage from "./components/CategoryItems/CategoryItems";
 import ItemDetail from "./components/Modal/Modal";
+import SeedsBlogPage from "./components/Blogs/Blogs";
+import AboutUs from "./components/AboutUs/AboutUs";
+import AuthPage from "./components/Login/Login";
 
 const App = () => {
   return (
@@ -17,8 +20,12 @@ const App = () => {
           <Route path="/category/:category" element={<CategoryPage />} />
 
           <Route path="/item/:id" element={<ItemDetail />} />
+          <Route path="/blog" element={<SeedsBlogPage />} />
+          <Route path="/about-us" element={<AboutUs />} />
+
           {/* <Route path="/cate/:category" element={<CategoryPage />} /> */}
         </Route>
+        <Route path="/login" element={<AuthPage />} />
       </Routes>
     </BrowserRouter>
   );

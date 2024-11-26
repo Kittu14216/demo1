@@ -54,7 +54,7 @@ const Navbar = () => {
         </li>
         <li>
           <NavLink
-            to="/category/Flowers"
+            to="/category/Flower Seeds"
             activeClassName="active"
             className="nav-item"
           >

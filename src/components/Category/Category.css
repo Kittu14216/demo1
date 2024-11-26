@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap");
+
 .menu-list-container {
   display: flex;
   flex-wrap: wrap;
@@ -12,6 +14,7 @@
 
 .menu-card {
   width: 200px;
+  height: 250px; /* Ensuring a consistent height for all cards */
   border: 1px solid #e0e0e0;
   border-radius: 10px; /* Border radius for the card itself */
   overflow: hidden;
@@ -27,7 +30,7 @@
 
 .menu-image {
   width: 100%;
-  height: 150px;
+  height: 150px; /* Ensuring a consistent image height */
   object-fit: contain; /* Ensures the image fits within its container */
   padding: 10px;
   border-radius: 0; /* No rounded corners for the image */
@@ -45,10 +48,11 @@
 @media (max-width: 768px) {
   .menu-card {
     width: 150px;
+    height: 200px; /* Ensuring a consistent height for all cards */
   }
 
   .menu-image {
-    height: 120px;
+    height: 100px; /* Ensuring a consistent image height */
     border-radius: 0; /* No rounded corners for the image on smaller screens */
   }
 }
@@ -57,10 +61,11 @@
 @media (max-width: 480px) {
   .menu-card {
     width: 120px;
+    height: 160px; /* Ensuring a consistent height for all cards */
   }
 
   .menu-image {
-    height: 100px;
+    height: 80px; /* Ensuring a consistent image height */
     border-radius: 0; /* No rounded corners for the image on smaller screens */
   }
 

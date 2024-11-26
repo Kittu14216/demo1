@@ -1,6 +1,7 @@
 // src/components/Navbar.js
 import React from "react";
 import "./NavigationTop.css";
+import { NavLink } from "react-router-dom";
 import { FaShoppingCart } from "react-icons/fa";
 
 const NavigationTop = () => {
@@ -21,7 +22,10 @@ const NavigationTop = () => {
           <FaShoppingCart size={20} />
           Cart
         </button>
-        <button className="login-button">Login</button>
+        <NavLink to="/login">
+          {" "}
+          <button className="login-button">Login</button>
+        </NavLink>
       </div>
       {/* <div className="divider"></div> */}
     </div>

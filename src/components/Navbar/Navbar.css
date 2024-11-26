@@ -63,16 +63,17 @@
 
   .menu-icon {
     display: block;
+    margin: 10px;
   }
 
   .nav-links-mobile {
     display: flex;
-
+    padding-top: 20px;
     margin-left: 0px; /* Align tabs on the left */
   }
 
   .nav-item {
-    vertical-align: 15px;
+    vertical-align: 20px;
     margin: 30px 20px;
     padding: 5px;
   }
